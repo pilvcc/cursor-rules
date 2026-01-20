@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+---
+
+Follow these conventions:
+
+- Use `map` from radash instead of `Promise.all(items.map(...))`.
+
+- Use `cn()` for conditional classNames. No template literals with conditionals.
+
+- Use TanStack `useMutation` for async actions. Never manually track loading
+  state with useState or write your own try/catch for error handling.
+
+- Prefer using Tailwind UNLESS styles are necessary because the Tailwind class
+  isn't supported in React Native, e.g. shadow, gradients, percentage-based
+  dimensions, zIndex, aspectRatio, calculated values, etc. If you have to use
+  styles, just inline the styles; don't use StyleSheet. Also, LinearGradient
+  from expo-linear-gradient doesn't support Tailwind, so use styles.
+
+- No inline JSX comments. No comments restating what code obviously does. Only
+  comment non-obvious reasoning.
+
+- Use icons from centralicons.
+
+- In a given file, name the main component's props type `Props`, not
+  `ComponentNameProps`. Secondary components can use `ComponentNameProps`.
+
+- Don't specify function return types. Let TypeScript infer them.
+
+- Import globals (db, API clients) directly. Never pass them as parameters.

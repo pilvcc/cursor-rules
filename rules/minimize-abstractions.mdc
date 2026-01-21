@@ -29,6 +29,6 @@ and complexity are not valid reasons to extract - only reuse is.
 
 Anti-patterns to avoid:
 
-- "Helper" functions called from one place
+- "Helper" functions called only once
 - Breaking a function into "steps" as separate functions
 - Wrapper functions that just call another function with minor tweaks

@@ -30,3 +30,9 @@ Follow these conventions:
 - Don't specify function return types. Let TypeScript infer them.
 
 - Import globals (db, API clients) directly. Never pass them as parameters.
+
+- Use anaphoric `it` in short single-param lambdas:
+  `animals.map((it) => it.size)`, not `animals.map((animal) => animal.size)`. If
+  the whole lambda can be read conceptually as a single unit -- e.g. "returns
+  the size sof whatever it's given" -- use `it`. For larger, more complex
+  lambdas where you reference the object repeatedly, descriptive names are fine.

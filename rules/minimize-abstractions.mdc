@@ -9,7 +9,7 @@ when the benefit (usually deduplication) clearly outweighs this cost.
 Maximize the ratio of code that does actual work to code that simply manages
 other code.
 
-Avoid:
+Anti-patterns to avoid:
 
 - Layers of indirection (A calls B calls C when A could just do C's work)
 - Wrapper types/classes that add no behavior
@@ -22,11 +22,10 @@ When designing, ask: "What's the least amount of abstraction needed for this to
 work?" Start there. Add abstraction only when duplication or genuine complexity
 forces it.
 
-NEVER extract a function, method, or helper that is only called once. Always
-inline the code directly at the call site, regardless of how long the parent
-function becomes. Only extract code into a separate function when it is called
-2+ times. Length and complexity are not valid reasons to extract - only reuse
-is.
+Special callout: NEVER extract a function, method, or helper that is only called
+once. Always inline the code directly at the call site, regardless of how long
+the parent function becomes. Only extract code when it's used 2+ times. Length
+and complexity are not valid reasons to extract - only reuse is.
 
 Anti-patterns to avoid:
 

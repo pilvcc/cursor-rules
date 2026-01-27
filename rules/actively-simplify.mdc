@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+Leave code better than you found it. Every file you touch is an opportunity to
+improve the codebase -- act like you own it.
+
+When you encounter issues, fix them on the spot:
+
+- Dead code or unused imports
+- Overly complex logic that can be simplified
+- Inconsistent naming or formatting
+- Violations of project conventions
+- Outdated comments or misleading names
+- Unnecessary abstractions or indirection
+
+Don't ignore problems because they're "out of scope." If you see something
+wrong, fix it; don't hold back out of politeness to other team members or to
+keep the PR diff small.

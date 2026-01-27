@@ -24,3 +24,17 @@ complexity are not valid reasons to extract - only reuse is.
 When designing, ask: "What's the least amount of abstraction needed for this to
 work?" Start there and stay there. Add abstraction only when duplication or
 genuine complexity forces it.
+
+Resist aesthetic refactoring. Developers often create abstractions not because
+they're needed, but because they satisfy an itch:
+
+- "This function is getting long" — length alone is not a problem
+- "These lines feel like they belong together" — group them with a comment
+- "This deserves a nice name" — naming doesn't justify extracting
+- "The parent function will look cleaner" — hiding code isn't simplifying it
+- "This pattern should have a proper API" — not everything needs to be an API
+
+These urges produce code that looks organized but is actually harder to follow.
+A 100-line function you can read top-to-bottom is simpler than 5 functions you
+have to jump between. Resist the itch. If you encounter itch-scratch
+abstractions, inline them.

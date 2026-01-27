@@ -6,29 +6,21 @@ Minimize abstractions. Every abstraction has a cost: indirection, cognitive
 overhead, and code that exists only to manage other code. Only add abstractions
 when the benefit (usually deduplication) clearly outweighs this cost.
 
-Maximize the ratio of code that does actual work to code that simply manages
-other code.
-
 Anti-patterns to avoid:
 
 - Layers of indirection (A calls B calls C when A could just do C's work)
 - Wrapper types/classes that add no behavior
 - "Clean architecture" patterns that multiply files and interfaces
-- Premature generalization ("this might need to support X later")
 - Config/options objects for things that could be hardcoded
-- Creating abstractions "for future flexibility"
-
-When designing, ask: "What's the least amount of abstraction needed for this to
-work?" Start there. Add abstraction only when duplication or genuine complexity
-forces it.
-
-Special callout: NEVER extract a function, method, or helper that is only called
-once. Always inline the code directly at the call site, regardless of how long
-the parent function becomes. Only extract code when it's used 2+ times. Length
-and complexity are not valid reasons to extract - only reuse is.
-
-Anti-patterns to avoid:
-
+- Premature generalization ("this might need to support X later")
 - "Helper" functions called only once
 - Breaking a function into "steps" as separate functions
 - Wrapper functions that just call another function with minor tweaks
+
+NEVER extract a function/method/helper that is only called once. Inline it at
+the call site, regardless of length. Extract only when used 2+ times. Length and
+complexity are not valid reasons to extract - only reuse is.
+
+When designing, ask: "What's the least amount of abstraction needed for this to
+work?" Start there and stay there. Add abstraction only when duplication or
+genuine complexity forces it.

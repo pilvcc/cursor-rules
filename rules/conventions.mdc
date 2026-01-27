@@ -6,9 +6,8 @@ Follow these conventions:
 
 - Use radash as the standard utility library. Prefer radash functions over
   manual implementations (e.g. `sum()`, not `.reduce(...)`). Skip only if it
-  makes the code much more awkward.
-
-- In particular, use radash's `map` instead of `Promise.all(items.map(...))`.
+  makes the code much more awkward. In particular, use radash's `map` instead
+  of `Promise.all(items.map(...))`.
 
 - Use `cn()` for conditional classNames. No template literals with conditionals.
 
@@ -19,8 +18,7 @@ Follow these conventions:
   percentage dimensions, zIndex, aspectRatio, calculated values). Inline styles
   when needed--no StyleSheet. LinearGradient requires styles.
 
-- No inline JSX comments. No comments restating what code obviously does. Only
-  comment non-obvious reasoning.
+- No inline JSX comments. Only comment non-obvious reasoning.
 
 - Use icons from centralicons.
 
@@ -31,8 +29,6 @@ Follow these conventions:
 
 - Import globals (db, API clients) directly. Never pass them as parameters.
 
-- Use anaphoric `it` in short single-param lambdas:
-  `animals.map((it) => it.size)`, not `animals.map((animal) => animal.size)`. If
-  the whole lambda can be read conceptually as a single unit -- e.g. "returns
-  the size sof whatever it's given" -- use `it`. For larger, more complex
-  lambdas where you reference the object repeatedly, descriptive names are fine.
+- Use `it` in short single-param lambdas: `animals.map((it) => it.size)`, not
+  `animals.map((animal) => animal.size)`. Use `it` when the lambda reads as a
+  single conceptual unit. Use descriptive names for complex lambdas.
